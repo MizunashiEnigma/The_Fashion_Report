@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-fashion',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './fashion.component.html',
   styleUrl: './fashion.component.css'
 })
@@ -20,6 +20,14 @@ export class FashionComponent {
 
   callApi(search:string){
     //GET RESPONSE to API
-    this._https.get<any>(this._APIURL + search)
+    this._https.get<any>(this._APIURL + search).subscribe((
+      response) => {
+      // Handle API response here
+      this.fashionData = response
+      console.log('API Response:', response);
+    }, (error) => {
+      // Handle API error here
+      console.error('API Error:', error);
+    });
   }
 }

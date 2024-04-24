@@ -10,6 +10,7 @@ import { catchError, tap } from "rxjs";
 })
 export class FashionserviceService {
 
+  fashionData:any
   constructor(private _https:HttpClient) { }
   private _APIURL = 'https://ffxivcollect.com/api/fashions/1';
 
@@ -17,7 +18,7 @@ export class FashionserviceService {
     this._https.get<any>('https://ffxivcollect.com/api/fashions/?name=' + search).subscribe((
       response) => {
       // Handle API response here
-      this.
+      this.fashionData = response
       console.log('API Response:', response);
     }, (error) => {
       // Handle API error here
