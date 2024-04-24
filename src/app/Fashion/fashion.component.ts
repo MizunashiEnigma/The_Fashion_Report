@@ -23,7 +23,7 @@ export class FashionComponent {
     this._https.get<any>(this._APIURL + search).subscribe((
       response) => {
       // Handle API response here
-      this.fashionData = response
+      this.fashionData = response // this data is being stored here
       console.log('API Response:', response);
     }, (error) => {
       // Handle API error here

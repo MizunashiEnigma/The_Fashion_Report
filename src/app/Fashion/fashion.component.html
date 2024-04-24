@@ -37,11 +37,11 @@
       <div class="row">
           <div class="col-md-4 mb-4" *ngFor="let fashions of fashionData.fashions">
               <div class="card amiibo-card">
-                  <img [src]="fashions.Image" class="card-img-top" alt="Fashion Image">
+                  <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text"><strong>Game Series:</strong> </p>
-                      <p class="card-text"><strong>Amiibo Type:</strong> </p>
+                      <h5 class="card-title">{{fashions.name}}</h5>
+                      <p class="card-text"><strong>Price:</strong>{{fashions.sources.text}}</p>
+                      <p class="card-text"><strong>Obtained:</strong> </p>
                   </div>
               </div>
           </div>
