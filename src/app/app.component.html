@@ -1,31 +1,41 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarNav">
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-           <a class="nav-link" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-          </li>
-          <li>
-              <!-- Search Bar & Button in the nav bar. a test for now-->
-              <div class="input-group mb-3">
-                <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" (click)="callApi()">Search</button>
-                </div>
-              </div>
-          </li>
+        <li>
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/fashion" routerLinkActive="active" ariaCurrentWhenActive="page">Fashion</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link" routerLink="/clothes" routerLinkActive="active" ariaCurrentWhenActive="page">Clothes</a>
-         </li>
-       </ul>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+        </li>
+        <li>
+          <!-- Search Bar & Button in the nav bar. a test for now-->
+          <div class="input-group mb-3">
+            <input type="text" #searchInput class="form-control" placeholder="Enter name">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" (click)="callApi(searchInput.value)">Search</button>
+            </div>
+          </div>
+      </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/fashion" routerLinkActive="active" ariaCurrentWhenActive="page">Fashion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/clothes" routerLinkActive="active" ariaCurrentWhenActive="page">Clothes</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-</div>
-<div class="container" style="background-color: #fff;">
+    
+  
+<div class="container justify-content-end" style="background-color: #fff;">
   <router-outlet></router-outlet>
+  <p style="font-size: 1.5rem;">Please note that the search only woks in <i>ENGLISH</i> currently.</p>
+  <p style="font-size: 1.5rem;">Do not try another language. Consider yourself warned.</p>
 </div>
 
 <div class="fixed-bottom">

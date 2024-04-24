@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(private _https:HttpClient){}
 
-  callApi() {
+  callApi(search:string) {
     // // GET request to the API
     // this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
     //   response => {

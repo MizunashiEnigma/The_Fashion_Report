@@ -1,1 +1,29 @@
-<p>clothes works!</p>
+<br/>
+<div class="container">
+    <!-- Search Bar & Button -->
+    <div class="input-group mb-3">
+      <input type="text" #searchInput class="form-control" placeholder="Enter name for the Armorie">
+      <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="callApi(searchInput.value)">Search</button>
+      </div>
+    </div>
+    
+    <br/>
+    <br/>
+    
+    <div>
+      <div *ngIf="clothesData" class="search-container">
+        <div class="row w-100">
+            <div class="col-md-4 mb-4" *ngFor="let fashions of clothesData.fashions">
+                <div class="card fashion-card">
+                    <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{fashions.name}}</h5>
+                        <p class="card-text"><strong>Price:</strong>{{fashions.sources.text}}</p>
+                        <p class="card-text"><strong>Obtained:</strong> {{fashions.sources.type}} </p>
+                        <p class="card-text"><strong>Patch:</strong> {{fashions.patch}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
