@@ -13,19 +13,21 @@ export class FashionserviceService {
   constructor(private _https:HttpClient) { }
   private _APIURL = 'https://ffxivcollect.com/api/fashions/1';
 
-  callApi(){
-    // this._https.get('https://ffxivcollect.com/api/fashions/1').subscribe((response) => {
-    //   // Handle API response here
-    //   console.log('API Response:', response);
-    // }, (error) => {
-    //   // Handle API error here
-    //   console.error('API Error:', error);
-    // });
-    return this._https.get<FashionInterface>(this._APIURL)
-    .pipe(
-      tap(data =>(console.log('Error' + JSON.stringify(data))))
-    ),
-    catchError(this.handleError)
+  callApi(search:string){
+    this._https.get<any>('https://ffxivcollect.com/api/fashions/?name=' + search).subscribe((
+      response) => {
+      // Handle API response here
+      this.
+      console.log('API Response:', response);
+    }, (error) => {
+      // Handle API error here
+      console.error('API Error:', error);
+    });
+    // return this._https.get<FashionInterface>(this._APIURL)
+    // .pipe(
+    //   tap(data =>(console.log('Error' + JSON.stringify(data))))
+    // ),
+    // catchError(this.handleError)
   };
 
   private handleError(err:HttpErrorResponse){

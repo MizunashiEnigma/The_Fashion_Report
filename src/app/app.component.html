@@ -5,8 +5,17 @@
         <li class="nav-item active">
            <a class="nav-link" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
           </li>
+          <li>
+              <!-- Search Bar & Button in the nav bar. a test for now-->
+              <div class="input-group mb-3">
+                <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="callApi()">Search</button>
+                </div>
+              </div>
+          </li>
            <li class="nav-item">
-             <a class="nav-link" routerLink="/clothes" routerLinkActive="active" ariaCurrentWhenActive="page">clothes</a>
+             <a class="nav-link" routerLink="/clothes" routerLinkActive="active" ariaCurrentWhenActive="page">Clothes</a>
          </li>
        </ul>
     </div>
@@ -15,10 +24,34 @@
 <div class="container">
 <!-- Search Bar & Button -->
 <div class="input-group mb-3">
-  <input type="text" #searchInput class="form-control" placeholder="Enter amiibo name (e.g. Mario)">
+  <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion">
   <div class="input-group-append">
       <button class="btn btn-primary" type="button" (click)="callApi()">Search</button>
   </div>
+</div>
+<div>
+  <div *ngIf="" class="search-container">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let amiibo of ">
+            <div class="card amiibo-card">
+                <img [src]="" class="card-img-top" alt="Amiibo Image">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><strong>Game Series:</strong> </p>
+                    <p class="card-text"><strong>Amiibo Type:</strong> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="fixed-bottom">
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; The Fashion Report 2024</p>
+    </div>
+  </footer>
 </div>
 </div>
 
