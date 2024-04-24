@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FashionserviceService } from '../service/fashionservice.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -15,14 +16,14 @@ export class AppComponent {
   constructor(private _https:HttpClient){}
 
   callApi() {
-    // GET request to the API
-    this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
-      response => {
-        this. = response; // Store this data
-      },
-      error => {
-        console.error('Error fetching amiibo data:', error); // Error Handling.
-      }
-    );
+    // // GET request to the API
+    // this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
+    //   response => {
+    //     this. = response; // Store this data
+    //   },
+    //   error => {
+    //     console.error('Error fetching amiibo data:', error); // Error Handling.
+    //   }
+    // );
   }
 }
