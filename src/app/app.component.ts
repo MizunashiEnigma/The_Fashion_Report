@@ -14,13 +14,15 @@ export class AppComponent {
 
   constructor(private _https:HttpClient){}
 
-  callApi(){
-    this._https.get('https://ffxivcollect.com/api/fashions/1').subscribe((response) => {
-      // Handle API response here
-      console.log('API Response:', response);
-    }, (error) => {
-      // Handle API error here
-      console.error('API Error:', error);
-    });
+  callApi() {
+    // GET request to the API
+    this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
+      response => {
+        this. = response; // Store this data
+      },
+      error => {
+        console.error('Error fetching amiibo data:', error); // Error Handling.
+      }
+    );
   }
 }
