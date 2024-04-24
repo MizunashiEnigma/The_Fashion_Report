@@ -36,9 +36,9 @@
     margin: 0 auto;
 }
 
-.fashion-card:hover {
+/* .fashion-card:hover {
     transform: scale(1.05);
-}
+} */
 
 .fashion-card img {
     width: 50%;

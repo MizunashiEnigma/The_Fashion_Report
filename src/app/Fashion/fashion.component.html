@@ -14,7 +14,7 @@
   <div>
     <div *ngIf="fashionData" class="search-container">
       <div class="row w-100">
-          <div class="col-md-4 mb-4" *ngFor="let fashions of fashionData.fashions">
+          <div class="col-12 col-md-4 mb-4" *ngFor="let fashions of fashionData.fashions">
               <div class="card fashion-card">
                   <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">

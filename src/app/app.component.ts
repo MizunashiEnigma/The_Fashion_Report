@@ -14,17 +14,18 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'The_Fashion_Report';
 
+  fashionData:any
   constructor(private _https:HttpClient){}
 
   callApi(search:string) {
-    // // GET request to the API
-    // this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
-    //   response => {
-    //     this. = response; // Store this data
-    //   },
-    //   error => {
-    //     console.error('Error fetching amiibo data:', error); // Error Handling.
-    //   }
-    // );
+    // GET request to the API
+    this._https.get<any>('https://ffxivcollect.com/api/fashions/1').subscribe(
+      response => {
+        this.fashionData = response; // Store this data
+      },
+      error => {
+        console.error('Error fetching amiibo data:', error); // Error Handling.
+      }
+    );
   }
 }
