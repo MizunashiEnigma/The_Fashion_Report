@@ -1,29 +1,4 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-             <a class="nav-link" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-            </li>
-            <li>
-                <!-- Search Bar & Button in the nav bar. a test for now-->
-                <div class="input-group mb-3">
-                  <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion">
-                  <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" (click)="callApi(searchInput.value)">Search</button>
-                  </div>
-                </div>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/fashion" routerLinkActive="active" ariaCurrentWhenActive="page">Fashion</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" routerLink="/clothes" routerLinkActive="active" ariaCurrentWhenActive="page">Clothes</a>
-           </li>
-         </ul>
-      </div>
-    </nav>
-  </div>
+
   <div class="container">
   <!-- Search Bar & Button -->
   <div class="input-group mb-3">
@@ -34,14 +9,14 @@
   </div>
   <div>
     <div *ngIf="fashionData" class="search-container">
-      <div class="row">
+      <div class="row w-100">
           <div class="col-md-4 mb-4" *ngFor="let fashions of fashionData.fashions">
-              <div class="card amiibo-card">
+              <div class="card fashion-card">
                   <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">
                       <h5 class="card-title">{{fashions.name}}</h5>
                       <p class="card-text"><strong>Price:</strong>{{fashions.sources.text}}</p>
-                      <p class="card-text"><strong>Obtained:</strong> </p>
+                      <p class="card-text"><strong>Obtained:</strong> {{fashions.sources.type}} </p>
                   </div>
               </div>
           </div>

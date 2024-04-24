@@ -20,7 +20,7 @@ export class FashionComponent {
 
   callApi(search:string){
     //GET RESPONSE to API
-    this._https.get<any>(this._APIURL + search).subscribe((
+    this._https.get<any>('https://ffxivcollect.com/api/fashions?name_en_start=' + search).subscribe((
       response) => {
       // Handle API response here
       this.fashionData = response // this data is being stored here
