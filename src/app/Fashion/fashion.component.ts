@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-fashion',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './fashion.component.html',
   styleUrl: './fashion.component.css'
 })
@@ -22,5 +22,4 @@ export class FashionComponent {
     //GET RESPONSE to API
     this._https.get<any>(this._APIURL + search)
   }
-
 }
