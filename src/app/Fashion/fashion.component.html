@@ -18,16 +18,30 @@
               <div class="card fashion-card">
                   <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">
-                      <h5 class="card-title">{{fashions.name}}</h5>
-                      <p class="card-text"><strong>Price:</strong>{{fashions.sources.text}}</p>
-                      <p class="card-text"><strong>Obtained:</strong> {{fashions.sources.type}} </p>
-                      <p class="card-text"><strong>Patch:</strong> {{fashions.patch}} </p>
+                      <h5 class="card-title">{{ fashions.results.character }}</h5>
+                      <p class="card-text"><strong>Price:</strong>{{fashions.results.sources.text}}</p>
+                      <p class="card-text"><strong>Obtained:</strong> {{fashions.results.sources.type}} </p>
+                      <p class="card-text"><strong>Patch:</strong> {{fashions.results.patch}} </p> 
                   </div>
               </div>
           </div>
       </div>
   </div>
-  </div>
+
+  <!-- <div *ngIf="amiiboData" class="search-container">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let amiibo of amiiboData.amiibo">
+            <div class="card amiibo-card">
+                <img [src]="amiibo.image" class="card-img-top" alt="Amiibo Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ amiibo.character }}</h5>
+                    <p class="card-text"><strong>Game Series:</strong> <br /> {{ amiibo.gameSeries }}</p>
+                    <p class="card-text"><strong>Amiibo Type:</strong> <br /> {{ amiibo.type }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
   
   <div class="fixed-bottom">
     <footer class="footer">
