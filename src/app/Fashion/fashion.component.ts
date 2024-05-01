@@ -23,23 +23,9 @@ export class FashionComponent {
       this._https.get<any>(this._APIURL + search).subscribe(
         (response) => {
           this.results = response.results;
-          this.processSources()
         },
         (error) => {
           console.log('Error fetching data:', error);
         }
   )};
-
-  processSources() {
-    for (let result of this.results) {
-      // Access sources array
-      const sources = result.sources;
-      if (sources && sources.length > 0) {
-        // Iterate through sources array
-        for (let source of sources) {
-          console.log(source);
-        }
-      }
-    }
-  }
 }

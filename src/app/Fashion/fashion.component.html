@@ -19,11 +19,11 @@
                   <img [src]="result.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">
                       <h5 class="card-title">{{ result.name }}</h5>
-                      <p class="card-text"><strong>Patch:</strong> {{result.patch}} </p> 
-                      <div *ngFor="let source of results.sources">
-                        <p class="card-text"><strong>Price:</strong>{{source.text}}</p>
-                        <p class="card-text"><strong>Obtained:</strong> {{source.type}} </p>
-                      </div>
+                      <h5 class="card-title">{{ result.id }}</h5>
+                      <p class="card-text"><strong>Patch :</strong> {{result.patch}} </p> 
+                      <p class="card-text"><strong>Tradeable? :</strong>{{result.tradeable}}</p>
+                      <p class="card-text"><strong>Owned :</strong>{{result.owned}}</p>
+                      <p class="card-text"><strong>Description :</strong>{{result.description}}</p>
                   </div>
               </div>
           </div>
