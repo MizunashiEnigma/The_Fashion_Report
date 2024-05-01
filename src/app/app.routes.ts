@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { FashionserviceService } from '../service/fashionservice.service';
 import { FashionComponent } from './Fashion/fashion.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { HairstyleComponent } from './hairstyle/hairstyle.component';
