@@ -2,10 +2,5 @@ export interface FashionInterface{
     name:string;
     image:string;
     patch:string;
-}
-export interface Sources{
-    type:string;
-    text:string;
-    related_type:string | any
-    related_id:string | any
+    sources: { type: string, text: string }[];
 }

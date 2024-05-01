@@ -2,7 +2,7 @@
   <div class="container">
   <!-- Search Bar & Button -->
   <div class="input-group mb-3">
-    <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion">
+    <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion Acessory........">
     <div class="input-group-append">
         <button class="btn btn-primary" type="button" (click)="callApi(searchInput.value)">Search</button>
     </div>
@@ -12,16 +12,18 @@
   <br/>
   
   <div>
-    <div *ngIf="fashionData" class="search-container">
+    <div *ngIf="results" class="search-container">
       <div class="row w-100">
-          <div class="col-12 col-md-4 mb-4" *ngFor="let fashions of fashionData.fashions">
+          <div class="col-12 col-md-4 mb-4" *ngFor="let result of results">
               <div class="card fashion-card">
-                  <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
+                  <img [src]="result.image" class="card-img-top" alt="Fashion Image">
                   <div class="card-body">
-                      <h5 class="card-title">{{ fashions.results.character }}</h5>
-                      <p class="card-text"><strong>Price:</strong>{{fashions.results.sources.text}}</p>
-                      <p class="card-text"><strong>Obtained:</strong> {{fashions.results.sources.type}} </p>
-                      <p class="card-text"><strong>Patch:</strong> {{fashions.results.patch}} </p> 
+                      <h5 class="card-title">{{ result.name }}</h5>
+                      <p class="card-text"><strong>Patch:</strong> {{result.patch}} </p> 
+                      <div *ngFor="let source of results.sources">
+                        <p class="card-text"><strong>Price:</strong>{{source.text}}</p>
+                        <p class="card-text"><strong>Obtained:</strong> {{source.type}} </p>
+                      </div>
                   </div>
               </div>
           </div>
