@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { FashionInterface } from '../../interfaces/fashion-interface';
+import { Observable, throwError } from "rxjs";
+import { catchError, tap } from "rxjs";
 @Component({
   selector: 'app-clothes',
   standalone: true,
@@ -9,17 +12,17 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrl: './clothes.component.css'
 })
 export class ClothesComponent {
-  clothesData:any
+  results:FashionInterface[] = [];
 
   constructor(private _https:HttpClient) { }
   private _APIURL = 'https://ffxivcollect.com/api/armoires?name_en_start=';
 
   callApi(search:string){
     //GET RESPONSE to API
-    this._https.get<any>('https://ffxivcollect.com/api/armoires?name_en_start=' + search).subscribe((
+    this._https.get<any>(this._APIURL + search).subscribe((
       response) => {
       // Handle API response here
-      this.clothesData = response // this data is being stored here
+      this.results = response.results // this data is being stored here
       console.log('API Response:', response);
     }, (error) => {
       // Handle API error here

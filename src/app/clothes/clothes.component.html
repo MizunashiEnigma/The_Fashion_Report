@@ -12,17 +12,17 @@
     <br/>
     
     <div>
-      <div *ngIf="clothesData" class="search-container">
-        <div class="row w-100">
-            <div class="col-md-4 mb-4" *ngFor="let fashions of clothesData.fashions">
-                <div class="card fashion-card">
-                    <img [src]="fashions.image" class="card-img-top" alt="Fashion Image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{fashions.name}}</h5>
-                        <p class="card-text"><strong>Price:</strong>{{fashions.sources.text}}</p>
-                        <p class="card-text"><strong>Obtained:</strong> {{fashions.sources.type}} </p>
-                        <p class="card-text"><strong>Patch:</strong> {{fashions.patch}} </p>
-                    </div>
+        <div *ngIf="results" class="search-container">
+            <div class="row w-100">
+                <div class="col-12 col-md-4 mb-4" *ngFor="let result of results">
+                    <div class="card fashion-card">
+                        <img [src]="result.icon" class="card-img-top" alt="Clothing Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ result.name }}</h5>
+                            <h5 class="card-title">ID: {{ result.id }}</h5>
+                            <p class="card-text"><strong>Patch :</strong> {{result.patch}} </p> 
+                            <p class="card-text"><strong>Owned :</strong>{{result.owned}}</p>
+                        </div>
                 </div>
             </div>
         </div>

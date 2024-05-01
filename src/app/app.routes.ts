@@ -2,8 +2,10 @@ import { Routes } from '@angular/router';
 import { FashionserviceService } from '../service/fashionservice.service';
 import { FashionComponent } from './Fashion/fashion.component';
 import { ClothesComponent } from './clothes/clothes.component';
+import { HairstyleComponent } from './hairstyle/hairstyle.component';
 
 export const routes: Routes = [
     {path:'fashion',component:FashionComponent},
-    {path:'clothes',component:ClothesComponent}
+    {path:'clothes',component:ClothesComponent},
+    {path:'hairstyles',component:HairstyleComponent}
 ];

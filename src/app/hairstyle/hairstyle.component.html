@@ -1,0 +1,31 @@
+
+<div class="container">
+    <!-- Search Bar & Button -->
+    <div class="input-group mb-3">
+      <input type="text" #searchInput class="form-control" placeholder="Enter name for the Fashion Acessory........">
+      <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="callApi(searchInput.value)">Search</button>
+      </div>
+    </div>
+    
+    <br/>
+    <br/>
+    
+    <div>
+      <div *ngIf="results" class="search-container">
+        <div class="row w-100">
+            <div class="col-12 col-md-4 mb-4" *ngFor="let result of results">
+                <div class="card fashion-card">
+                    <img [src]="result.icon" class="card-img-top" alt="hair Icon">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ result.name }}</h5>
+                        <h5 class="card-title">ID: {{ result.id }}</h5>
+                        <p class="card-text"><strong>Patch :</strong> {{result.patch}} </p> 
+                        <p class="card-text"><strong>Tradeable? :</strong>{{result.tradeable}}</p>
+                        <p class="card-text"><strong>Owned :</strong>{{result.owned}}</p>
+                        <p class="card-text"><strong>Description :</strong>{{result.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
